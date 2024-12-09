@@ -1,22 +1,22 @@
 INSERT INTO "user" (first_name, last_name, email) values
-	('Ant', 'AntSurname', 'ant@ya.ru'),
+    ('Ant', 'AntSurname', 'ant@ya.ru'),
     ('Bob', 'BobSurname', 'bob@ya.ru'),
     ('Cora', 'CoraSurname', 'cora@ya.ru'),
-	('Dobby', 'DobbySurname', 'dobby@ya.ru'),
+    ('Dobby', 'DobbySurname', 'dobby@ya.ru'),
     ('Eva', 'EvaSurname', 'eva@ya.ru'),
     ('Foma', 'FomaaSurname', 'foma@ya.ru'),
     ('Gorge', 'GorgeSurname', 'gorge@ya.ru'),
-	('Holms', 'HolmsSurname', 'holms@ya.ru'),
+    ('Holms', 'HolmsSurname', 'holms@ya.ru'),
     ('Ivan', 'IvanSurname', 'ivan@ya.ru'),
     ('John', 'JohnSurname', 'john@ya.ru');
   
 INSERT INTO playlist (name) VALUES
-	('Abby Songs'),
+    ('Abby Songs'),
     ('Bobr dobr'),
     ('Cars and co'),
-	('Dobby the best'),
-	('Easter songs'),
-	('Franch music');
+    ('Dobby the best'),
+    ('Easter songs'),
+    ('Franch music');
   
 INSERT INTO user_playlist (user_id, playlist_id) VALUES
     (1, 1),
@@ -42,12 +42,12 @@ INSERT INTO musician (user_id, nick_name) VALUES
     (10, 'Super John 3000');
   
 INSERT INTO album (title, date) VALUES
-	('Super Hit 1', '2021-01-01'),
-	('Super Hit 2', '2022-02-02'),
-	('Super Hit 3', '2023-03-03'),
-	('Super Hit 4', '2024-04-04'),
-	('Super Hit 5', '2025-05-05'),
-	('Super Hit 6', '2026-06-06');
+    ('Super Hit 1', '2021-01-01'),
+    ('Super Hit 2', '2022-02-02'),
+    ('Super Hit 3', '2023-03-03'),
+    ('Super Hit 4', '2024-04-04'),
+    ('Super Hit 5', '2025-05-05'),
+    ('Super Hit 6', '2026-06-06');
   
 INSERT INTO musician_album (musician_id, album_id) VALUES
     (1, 1),
