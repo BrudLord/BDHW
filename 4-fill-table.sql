@@ -66,7 +66,7 @@ INSERT INTO user_album (user_id, album_id) VALUES
     (1, 1),
     (1, 2),
     (2, 3),
-    (2, 3),
+    (2, 4),
     (7, 4),
     (7, 5),
     (7, 6),
