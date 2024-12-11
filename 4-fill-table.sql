@@ -105,7 +105,7 @@ INSERT INTO playlist_song (playlist_id, song_id) VALUES
   
 INSERT INTO purchase (user_id, date) VALUES
     (1, '2023-09-01'),
-    (2, '2023-09-02'),
+    (1, '2023-09-02'),
     (3, '2023-09-03'),
     (4, '2023-09-04'),
     (5, '2023-09-05');
