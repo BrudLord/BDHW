@@ -62,7 +62,7 @@ INSERT INTO musician_album (musician_id, album_id) VALUES
     (6, 5),
     (6, 6);
   
-INSERT INTO user_album (musician_id, album_id) VALUES
+INSERT INTO user_album (user_id, album_id) VALUES
     (1, 1),
     (1, 2),
     (2, 3),
