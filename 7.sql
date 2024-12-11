@@ -4,7 +4,7 @@ SET search_path=music_service_views;
 CREATE VIEW view_user AS
 SELECT
     first_name,
-    COALESCE(last_name, 'N/A') last_name,
+    LEFT(last_name, 3) || REPEAT('*', LENGTH(last_name) - 3) AS last_name,
     CONCAT(SUBSTRING(email, 1, POSITION('@' IN email) - 1), '@****') AS email
 FROM music_service."user";
 
@@ -16,7 +16,7 @@ FROM music_service.playlist;
 CREATE VIEW view_user_playlist AS
 SELECT
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name,
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name,
     p.name AS playlist_name
 FROM music_service.user_playlist up
 INNER JOIN music_service."user" u 
@@ -27,8 +27,8 @@ ON up.playlist_id = p.id;
 CREATE VIEW music_service_views.view_musician AS
 SELECT
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name,
-    LEFT(nick_name, 3) || REPEAT('*', LENGTH(nick_name) - 3) AS nick_name
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name,
+    nick_name
 FROM music_service.musician m
 INNER JOIN music_service."user" u 
 ON m.user_id = u.id;
@@ -42,7 +42,7 @@ FROM music_service.album;
 CREATE VIEW view_musician_album AS
 SELECT
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name,
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name,
     a.title AS album_title
 FROM music_service.musician_album ma
 INNER JOIN music_service.musician m 
@@ -55,7 +55,7 @@ ON ma.album_id = a.id;
 CREATE VIEW music_service_views.view_user_album AS
 SELECT
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name,
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name,
     a.title AS album_title
 FROM music_service.user_album ua
 INNER JOIN music_service."user" u 
@@ -94,7 +94,7 @@ CREATE VIEW music_service_views.view_purchase AS
 SELECT
     p.date AS purchase_date,
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name
 FROM music_service.purchase p
 INNER JOIN music_service."user" u 
 ON p.user_id = u.id;
@@ -103,7 +103,7 @@ CREATE VIEW music_service_views.view_purchase_song AS
 SELECT
     pu.date AS purchase_date,
     u.first_name AS user_first_name,
-    u.last_name AS user_last_name,
+    LEFT(u.last_name, 3) || REPEAT('*', LENGTH(u.last_name) - 3) AS user_last_name,
     s.title AS song_title,
     CONCAT(LEFT(sc.cost::TEXT, POSITION('.' IN sc.cost::TEXT) - 1), '.**') AS masked_cost
 FROM music_service.purchase_song ps
