@@ -1,3 +1,4 @@
+SET search_path=music_service;
 INSERT INTO "user" (first_name, last_name, email) values
     ('Ant', 'AntSurname', 'ant@ya.ru'),
     ('Bob', 'BobSurname', 'bob@ya.ru'),
