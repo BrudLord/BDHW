@@ -1,4 +1,5 @@
-set search_path=music_service;
+CREATE SCHEMA music_service;
+SET search_path=music_service;
 CREATE TABLE "user" (
     id SERIAL PRIMARY KEY,
     first_name TEXT NOT NULL,
