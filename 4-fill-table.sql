@@ -62,6 +62,17 @@ INSERT INTO musician_album (musician_id, album_id) VALUES
     (6, 5),
     (6, 6);
   
+INSERT INTO user_album (musician_id, album_id) VALUES
+    (1, 1),
+    (1, 2),
+    (2, 3),
+    (2, 3),
+    (7, 4),
+    (7, 5),
+    (7, 6),
+    (10, 3),
+    (10, 6);
+  
 INSERT INTO song_cost (cost, version) VALUES
     (0.99, 1),
     (5.29, 2),
