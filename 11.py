@@ -60,7 +60,7 @@ def read_queries():
         .where(user_table.c.first_name == "Ant")
     )
     result = connection.execute(query)
-    print("Все плейлисты пользователя Ant:\n", result.fetchall())
+    print("Все плейлисты пользователя Ant:", *result.fetchall(), sep="\n")
 
     # Все песни альбома с заголовком 'Super Hit 1'
     query = (
@@ -69,7 +69,7 @@ def read_queries():
         .where(album_table.c.title == "Super Hit 1")
     )
     result = connection.execute(query)
-    print("Все песни альбома с заголовком 'Super Hit 1':\n", result.fetchall())
+    print("Все песни альбома с заголовком 'Super Hit 1':", *result.fetchall(), sep="\n")
 
 
 # Update запросы
@@ -175,5 +175,4 @@ update_queries()
 delete_queries()
 analytical_queries()
 
-# Закрытие соединения
 connection.close()
