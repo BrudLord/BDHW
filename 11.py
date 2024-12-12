@@ -1,6 +1,5 @@
 from sqlalchemy import MetaData, create_engine, delete, desc, func, select, update
 
-# Указать ваши значения
 DB_LOGIN = "postgres"
 DB_PASSWORD = "postgres"
 DB_NAME = "hse"
